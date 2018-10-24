@@ -1,6 +1,6 @@
 const Discord = require('discord.js');
-const Rocket = new Discord.Client();
-Rocket.on('message', message => {
+const client = new Discord.Client();
+client.on('message', message => {
               if(!message.channel.guild) return;
     if(message.content.startsWith('$bc')) {
     if(!message.channel.guild) return message.channel.send('**هذا الأمر فقط للسيرفرات**').then(m => m.delete(5000));
@@ -73,4 +73,4 @@ if (message.content.startsWith(adminprefix + 'setavatar')) {
 }
 });
 
-Rocket.login(process.env.BOT_TOKEN);
+client.login(process.env.BOT_TOKEN);
